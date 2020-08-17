@@ -10,37 +10,37 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": "CUSTOM:Shadow_IngotIngot"
+        "value": "CUSTOM:DeathIngotIngot"
       },
       {
         "value": ""
       },
       {
-        "value": "CUSTOM:Shadow_IngotIngot"
+        "value": "CUSTOM:DeathIngotIngot"
       },
       {
-        "value": "CUSTOM:Shadow_IngotIngot"
+        "value": "CUSTOM:DeathIngotIngot"
       },
       {
-        "value": "CUSTOM:Shadow_IngotIngot"
+        "value": "CUSTOM:DeathIngotIngot"
       },
       {
-        "value": "CUSTOM:Shadow_IngotIngot"
+        "value": "CUSTOM:DeathIngotIngot"
       },
       {
-        "value": "CUSTOM:Shadow_IngotIngot"
+        "value": "CUSTOM:DeathIngotIngot"
       },
       {
-        "value": "CUSTOM:Shadow_IngotIngot"
+        "value": "CUSTOM:DeathIngotIngot"
       },
       {
-        "value": "CUSTOM:Shadow_IngotIngot"
+        "value": "CUSTOM:DeathIngotIngot"
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:Shadow_armorArmor.body"
+      "value": "CUSTOM:DeathArmorArmor.body"
     },
-    "name": "shadow_armor_armor_body_recipe",
+    "name": "death_armor_armor_body_recipe",
     "namespace": "mod"
   }
 }

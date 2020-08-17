@@ -1,0 +1,13 @@
+{
+  "group": "cascade_sorcery",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cascade_sorcery:death_ingot_ore_block"
+    }
+  ],
+  "result": {
+    "item": "cascade_sorcery:death_ingot_ingot",
+    "count": 9
+  }
+}

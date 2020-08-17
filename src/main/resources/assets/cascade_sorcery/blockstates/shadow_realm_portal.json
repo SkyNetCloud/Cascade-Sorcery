@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "cascade_sorcery:block/shadow_realm_portal_ew"
+    },
+    "axis=x": {
+      "model": "cascade_sorcery:block/shadow_realm_portal_ns"
+    }
+  }
+}

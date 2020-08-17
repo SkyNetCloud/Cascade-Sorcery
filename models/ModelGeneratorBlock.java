@@ -1,47 +1,22 @@
 
-package net.mcreator.voltage.block;
-
-import net.minecraftforge.registries.ObjectHolder;
-
-import net.minecraft.world.storage.loot.LootContext;
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.World;
-import net.minecraft.world.IWorldReader;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Item;
-import net.minecraft.item.BlockItem;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Block;
-
-import net.mcreator.voltage.procedures.GeneratorUpdateTickProcedure;
-import net.mcreator.voltage.VoltageModElements;
-
-import java.util.Random;
-import java.util.Map;
-import java.util.List;
-import java.util.HashMap;
-import java.util.Collections;
-
 @VoltageModElements.ModElement.Tag
-public class GeneratorBlock extends VoltageModElements.ModElement {
+public static class ModelGeneratorBlock extends VoltageModElements.ModElement {
 	@ObjectHolder("voltage:generator")
 	public static final Block block = null;
-	public GeneratorBlock(VoltageModElements instance) {
+	public ModelGeneratorBlock(VoltageModElements instance) {
 		super(instance, 1);
 	}
 
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(ItemGroup.REDSTONE)).setRegistryName(block.getRegistryName()));
+		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(ItemGroup.REDSTONE))
+				.setRegistryName(block.getRegistryName()));
 	}
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(1f, 10f).lightValue(0));
+			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(1f, 10f)
+					.lightValue(0));
 			setRegistryName("generator");
 		}
 
@@ -80,5 +55,8 @@ public class GeneratorBlock extends VoltageModElements.ModElement {
 			}
 			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, this.tickRate(world));
 		}
+	}
+	public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
+		super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
 	}
 }

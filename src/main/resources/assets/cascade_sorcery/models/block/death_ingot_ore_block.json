@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "cascade_sorcery:blocks/deathingot_ore_block",
+    "particle": "cascade_sorcery:blocks/deathingot_ore_block"
+  }
+}

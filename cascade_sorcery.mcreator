@@ -212,22 +212,204 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "shadow_biome"
+    },
+    {
+      "name": "PowerGen",
+      "type": "procedure",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "power_gen",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ShadowRealm",
+      "type": "dimension",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "shadow_realm"
+    },
+    {
+      "name": "ShadowRealmCanTravelThroughPortal",
+      "type": "procedure",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "shadow_realm_can_travel_through_portal",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DeathIngotIngot",
+      "type": "item",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "death_ingot_ingot"
+    },
+    {
+      "name": "DeathIngotOre",
+      "type": "block",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "death_ingot_ore"
+    },
+    {
+      "name": "DeathIngotOreBlock",
+      "type": "block",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "death_ingot_ore_block"
+    },
+    {
+      "name": "DeathIngotOreBlockRecipe",
+      "type": "recipe",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "death_ingot_ore_block_recipe"
+    },
+    {
+      "name": "DeathIngotBlockOreRecipe",
+      "type": "recipe",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "death_ingot_block_ore_recipe"
+    },
+    {
+      "name": "DeathIngotOreSmelting",
+      "type": "recipe",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "death_ingot_ore_smelting"
+    },
+    {
+      "name": "DeathArmorArmor",
+      "type": "armor",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "death_armor_armor",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      }
+    },
+    {
+      "name": "DeathArmorArmorHelmetRecipe",
+      "type": "recipe",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "death_armor_armor_helmet_recipe"
+    },
+    {
+      "name": "DeathArmorArmorBodyRecipe",
+      "type": "recipe",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "death_armor_armor_body_recipe"
+    },
+    {
+      "name": "DeathArmorArmorLeggingsRecipe",
+      "type": "recipe",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "death_armor_armor_leggings_recipe"
+    },
+    {
+      "name": "DeathArmorArmorBootsRecipe",
+      "type": "recipe",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "death_armor_armor_boots_recipe"
     }
   ],
-  "variable_elements": [],
+  "variable_elements": [
+    {
+      "name": "BioEng",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "BioMax",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "BioEnter",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "DangerBio",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    }
+  ],
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "item.cascade_sorcery.shadow_ingot_ingot": "Shadow_Ingot",
-      "block.cascade_sorcery.merger_table_block": "Merger Table Block",
-      "item.cascade_sorcery.shadow_armor_armor_chestplate": "Shadow_armor Chestplate",
-      "block.cascade_sorcery.shadow_ingot_ore": "Shadow_Ingot Ore",
+      "item.cascade_sorcery.shadow_realm": "Shadow Realm Portal Igniter",
+      "item.cascade_sorcery.shadow_armor_armor_chestplate": "Shadow Armor Chestplate",
       "itemGroup.tabcascade_sorcery_tab": "Cascade Sorcery Tab",
-      "item.cascade_sorcery.shadow_armor_armor_leggings": "Shadow_armor Leggings",
-      "item.cascade_sorcery.shadow_armor_armor_helmet": "Shadow_armor Helmet",
-      "item.cascade_sorcery.shadow_armor_armor_boots": "Shadow_armor Boots",
+      "block.cascade_sorcery.death_ingot_ore_block": "Block of DeathIngot",
+      "item.cascade_sorcery.shadow_armor_armor_leggings": "Shadow Armor Leggings",
+      "block.cascade_sorcery.death_ingot_ore": "DeathIngot Ore",
       "block.cascade_sorcery.dead_grass_block": "Dead Grass Block",
-      "block.cascade_sorcery.shadow_ingot_ore_block": "Block of Shadow_Ingot"
+      "item.cascade_sorcery.shadow_armor_armor_boots": "Shadow Armor Boots",
+      "block.cascade_sorcery.shadow_ingot_ore_block": "Block of Shadow Ingot",
+      "item.cascade_sorcery.shadow_ingot_ingot": "Shadow Ingot",
+      "block.cascade_sorcery.merger_table_block": "Merger Table Block",
+      "item.cascade_sorcery.death_armor_armor_helmet": "DeathArmor Helmet",
+      "item.cascade_sorcery.death_armor_armor_chestplate": "DeathArmor Chestplate",
+      "block.cascade_sorcery.shadow_ingot_ore": "Shadow Ingot Ore",
+      "item.cascade_sorcery.death_armor_armor_leggings": "DeathArmor Leggings",
+      "item.cascade_sorcery.shadow_armor_armor_helmet": "Shadow Armor Helmet",
+      "item.cascade_sorcery.death_ingot_ingot": "DeathIngot",
+      "item.cascade_sorcery.death_armor_armor_boots": "DeathArmor Boots"
     }
   },
   "workspaceSettings": {

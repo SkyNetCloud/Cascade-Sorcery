@@ -1,5 +1,5 @@
 
-package net.mcreator.voltage.item;
+package net.mcreator.cascadesorcery.item;
 
 import net.minecraftforge.registries.ObjectHolder;
 
@@ -8,14 +8,14 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.block.BlockState;
 
-import net.mcreator.voltage.VoltageModElements;
+import net.mcreator.cascadesorcery.CascadeSorceryModElements;
 
-@VoltageModElements.ModElement.Tag
-public class BatteryItem extends VoltageModElements.ModElement {
-	@ObjectHolder("voltage:battery")
+@CascadeSorceryModElements.ModElement.Tag
+public class DeathIngotIngotItem extends CascadeSorceryModElements.ModElement {
+	@ObjectHolder("cascade_sorcery:death_ingot_ingot")
 	public static final Item block = null;
-	public BatteryItem(VoltageModElements instance) {
-		super(instance, 9);
+	public DeathIngotIngotItem(CascadeSorceryModElements instance) {
+		super(instance, 20);
 	}
 
 	@Override
@@ -24,8 +24,8 @@ public class BatteryItem extends VoltageModElements.ModElement {
 	}
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(ItemGroup.REDSTONE).maxStackSize(64));
-			setRegistryName("battery");
+			super(new Item.Properties().group(ItemGroup.MISC).maxStackSize(64));
+			setRegistryName("death_ingot_ingot");
 		}
 
 		@Override

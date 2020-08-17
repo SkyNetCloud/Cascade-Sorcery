@@ -1,0 +1,39 @@
+{
+  "group": "cascade_sorcery",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 2",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "cascade_sorcery:death_ingot_ingot"
+    },
+    "2": {
+      "item": "cascade_sorcery:death_ingot_ingot"
+    },
+    "3": {
+      "item": "cascade_sorcery:death_ingot_ingot"
+    },
+    "4": {
+      "item": "cascade_sorcery:death_ingot_ingot"
+    },
+    "5": {
+      "item": "cascade_sorcery:death_ingot_ingot"
+    },
+    "6": {
+      "item": "cascade_sorcery:death_ingot_ingot"
+    },
+    "7": {
+      "item": "cascade_sorcery:death_ingot_ingot"
+    },
+    "8": {
+      "item": "cascade_sorcery:death_ingot_ingot"
+    }
+  },
+  "result": {
+    "item": "cascade_sorcery:death_armor_armor_chestplate",
+    "count": 1
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "cascade_sorcery:block/merger_table_block"
+    }
+  }
+}

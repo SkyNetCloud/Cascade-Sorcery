@@ -1,0 +1,53 @@
+{
+  "_fv": 10,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "shadow_armor_head",
+    "enableBody": true,
+    "textureBody": "shadow_armor_body",
+    "enableLeggings": true,
+    "textureLeggings": "shadow_armor_leggings",
+    "enableBoots": true,
+    "textureBoots": "shadow_armor_boots",
+    "creativeTab": {
+      "value": "CUSTOM:CascadeSorceryTab"
+    },
+    "armorTextureFile": "shadow_armor",
+    "helmetName": "Shadow_armor Helmet",
+    "bodyName": "Shadow_armor Chestplate",
+    "leggingsName": "Shadow_armor Leggings",
+    "bootsName": "Shadow_armor Boots",
+    "helmetSpecialInfo": [],
+    "bodySpecialInfo": [],
+    "leggingsSpecialInfo": [],
+    "bootsSpecialInfo": [],
+    "helmetModelName": "Default",
+    "helmetModelPart": "Helmet",
+    "helmetModelTexture": "From armor",
+    "bodyModelName": "Default",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "Arms L",
+    "armsModelPartR": "Arms R",
+    "bodyModelTexture": "From armor",
+    "leggingsModelName": "Default",
+    "leggingsModelPartL": "Leggings L",
+    "leggingsModelPartR": "Leggings R",
+    "leggingsModelTexture": "From armor",
+    "bootsModelName": "Default",
+    "bootsModelPartL": "Boots L",
+    "bootsModelPartR": "Boots R",
+    "bootsModelTexture": "From armor",
+    "maxDamage": 147,
+    "damageValueHelmet": 20,
+    "damageValueBody": 49,
+    "damageValueLeggings": 59,
+    "damageValueBoots": 20,
+    "enchantability": 88,
+    "toughness": 0.0,
+    "equipSound": {
+      "value": ""
+    },
+    "repairItems": []
+  }
+}

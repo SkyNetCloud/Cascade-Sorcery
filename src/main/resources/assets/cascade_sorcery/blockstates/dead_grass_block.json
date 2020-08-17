@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "cascade_sorcery:block/dead_grass_block"
+    }
+  }
+}

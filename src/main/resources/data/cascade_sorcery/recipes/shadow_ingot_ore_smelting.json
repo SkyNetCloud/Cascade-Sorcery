@@ -1,0 +1,12 @@
+{
+  "group": "cascade_sorcery",
+  "type": "minecraft:smelting",
+  "experience": 0.7,
+  "cookingtime": 200,
+  "ingredient": {
+    "item": "cascade_sorcery:shadow_ingot_ore"
+  },
+  "result": {
+    "item": "cascade_sorcery:shadow_ingot_ingot"
+  }
+}

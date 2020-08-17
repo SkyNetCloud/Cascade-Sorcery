@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "cascade_sorcery:blocks/shadow_ingot_ore",
+    "particle": "cascade_sorcery:blocks/shadow_ingot_ore"
+  }
+}

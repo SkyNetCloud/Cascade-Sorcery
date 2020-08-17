@@ -1,0 +1,11 @@
+{
+  "_fv": 10,
+  "_type": "tab",
+  "definition": {
+    "name": "Cascade Sorcery Tab",
+    "icon": {
+      "value": "CUSTOM:Shadow_IngotIngot"
+    },
+    "showSearch": false
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "id_map": {},
+  "mod_elements": [
+    {
+      "name": "MergerProcedure",
+      "type": "procedure",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "merger_procedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MergerTableBlock",
+      "type": "block",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "merger_table_block"
+    },
+    {
+      "name": "MergerGUI",
+      "type": "gui",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "merger_gui"
+    },
+    {
+      "name": "OpenMergerTableUI",
+      "type": "procedure",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "open_merger_table_ui",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Shadow_armorArmor",
+      "type": "armor",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "shadow_armor_armor",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      }
+    },
+    {
+      "name": "Shadow_armorArmorHelmetRecipe",
+      "type": "recipe",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "shadow_armor_armor_helmet_recipe"
+    },
+    {
+      "name": "Shadow_armorArmorBodyRecipe",
+      "type": "recipe",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "shadow_armor_armor_body_recipe"
+    },
+    {
+      "name": "Shadow_armorArmorLeggingsRecipe",
+      "type": "recipe",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "shadow_armor_armor_leggings_recipe"
+    },
+    {
+      "name": "Shadow_armorArmorBootsRecipe",
+      "type": "recipe",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "shadow_armor_armor_boots_recipe"
+    },
+    {
+      "name": "Shadow_IngotIngot",
+      "type": "item",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "shadow_ingot_ingot"
+    },
+    {
+      "name": "Shadow_IngotOre",
+      "type": "block",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "shadow_ingot_ore"
+    },
+    {
+      "name": "Shadow_IngotOreBlock",
+      "type": "block",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "shadow_ingot_ore_block"
+    },
+    {
+      "name": "Shadow_IngotOreBlockRecipe",
+      "type": "recipe",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "shadow_ingot_ore_block_recipe"
+    },
+    {
+      "name": "Shadow_IngotBlockOreRecipe",
+      "type": "recipe",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "shadow_ingot_block_ore_recipe"
+    },
+    {
+      "name": "Shadow_IngotOreSmelting",
+      "type": "recipe",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "shadow_ingot_ore_smelting"
+    },
+    {
+      "name": "CascadeSorceryTab",
+      "type": "tab",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cascade_sorcery_tab"
+    },
+    {
+      "name": "DeadGrassBlock",
+      "type": "block",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dead_grass_block"
+    },
+    {
+      "name": "ShadowBiome",
+      "type": "biome",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "shadow_biome"
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "item.cascade_sorcery.shadow_ingot_ingot": "Shadow_Ingot",
+      "block.cascade_sorcery.merger_table_block": "Merger Table Block",
+      "item.cascade_sorcery.shadow_armor_armor_chestplate": "Shadow_armor Chestplate",
+      "block.cascade_sorcery.shadow_ingot_ore": "Shadow_Ingot Ore",
+      "itemGroup.tabcascade_sorcery_tab": "Cascade Sorcery Tab",
+      "item.cascade_sorcery.shadow_armor_armor_leggings": "Shadow_armor Leggings",
+      "item.cascade_sorcery.shadow_armor_armor_helmet": "Shadow_armor Helmet",
+      "item.cascade_sorcery.shadow_armor_armor_boots": "Shadow_armor Boots",
+      "block.cascade_sorcery.dead_grass_block": "Dead Grass Block",
+      "block.cascade_sorcery.shadow_ingot_ore_block": "Block of Shadow_Ingot"
+    }
+  },
+  "workspaceSettings": {
+    "modid": "cascade_sorcery",
+    "modName": "Cascade Sorcery",
+    "version": "1.0.0",
+    "author": "black, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.15.2",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "net.mcreator.cascadesorcery",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202000432115
+}

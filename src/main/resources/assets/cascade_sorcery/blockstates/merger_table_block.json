@@ -1,7 +1,27 @@
 {
   "variants": {
-    "": {
+    "facing=north": {
       "model": "cascade_sorcery:block/merger_table_block"
+    },
+    "facing=east": {
+      "model": "cascade_sorcery:block/merger_table_block",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "cascade_sorcery:block/merger_table_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "cascade_sorcery:block/merger_table_block",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "cascade_sorcery:block/merger_table_block",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "cascade_sorcery:block/merger_table_block",
+      "x": 90
     }
   }
 }

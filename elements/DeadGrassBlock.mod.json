@@ -2,12 +2,12 @@
   "_fv": 10,
   "_type": "block",
   "definition": {
-    "texture": "side",
-    "textureTop": "top",
-    "textureLeft": "side",
-    "textureFront": "side",
-    "textureRight": "side",
-    "textureBack": "side",
+    "texture": "bottom",
+    "textureTop": "new-top",
+    "textureLeft": "redone-image",
+    "textureFront": "redone-image",
+    "textureRight": "redone-image",
+    "textureBack": "redone-image",
     "renderType": 10,
     "customModelName": "Normal",
     "rotationMode": 0,
@@ -41,7 +41,7 @@
     "canProvidePower": false,
     "lightOpacity": 255,
     "material": {
-      "value": "ROCK"
+      "value": "GRASS"
     },
     "tickRate": 10,
     "tickRandomly": false,
@@ -88,6 +88,12 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onDestroyedByPlayer": {
+      "name": "DeadGrassBlockBlockDestroyedByPlayer"
+    },
+    "onEntityWalksOn": {
+      "name": "SoundPlay"
+    },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],
     "blocksToReplace": [

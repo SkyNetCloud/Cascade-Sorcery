@@ -48,6 +48,10 @@ public class CascadeSorceryModElements {
 	public final List<Supplier<Enchantment>> enchantments = new ArrayList<>();
 	public static Map<ResourceLocation, net.minecraft.util.SoundEvent> sounds = new HashMap<>();
 	public CascadeSorceryModElements() {
+		sounds.put(new ResourceLocation("cascade_sorcery", "shadow_block_sound"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("cascade_sorcery", "shadow_block_sound")));
+		sounds.put(new ResourceLocation("cascade_sorcery", "shadow"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("cascade_sorcery", "shadow")));
 		try {
 			ModFileScanData modFileInfo = ModList.get().getModFileById("cascade_sorcery").getFile().getScanResult();
 			Set<ModFileScanData.AnnotationData> annotations = modFileInfo.getAnnotations();

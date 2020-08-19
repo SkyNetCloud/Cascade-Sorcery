@@ -7,7 +7,8 @@ version="1.0.0"
 displayName="Cascade Sorcery"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
 displayURL="https://mcreator.net"
-authors="black, MCreator"
+logoFile="logo.png"
+authors="SkyNetCloud"
 
 [[dependencies.cascade_sorcery]]
     modId="minecraft"

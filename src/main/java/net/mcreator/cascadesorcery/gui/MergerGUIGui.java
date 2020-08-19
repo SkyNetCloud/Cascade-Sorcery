@@ -307,7 +307,7 @@ public class MergerGUIGui extends CascadeSorceryModElements.ModElement {
 			this.xSize = 176;
 			this.ySize = 166;
 		}
-		private static final ResourceLocation texture = new ResourceLocation("cascade_sorcery:textures/merger_gui.png");
+		private static final ResourceLocation texture = new ResourceLocation("cascade_sorcery:textures/gui.png");
 		@Override
 		public void render(int mouseX, int mouseY, float partialTicks) {
 			this.renderBackground();

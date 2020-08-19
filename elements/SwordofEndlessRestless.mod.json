@@ -1,0 +1,29 @@
+{
+  "_fv": 10,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "sword_of_endless_rest",
+    "customModelName": "Normal",
+    "name": "Swordof Endless Rest",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "COMBAT"
+    },
+    "toolType": "Sword",
+    "harvestLevel": 4,
+    "efficiency": 1.0,
+    "attackSpeed": 15.0,
+    "enchantability": 55,
+    "damageVsEntity": 9.0,
+    "usageCount": 116051,
+    "blocksAffected": [],
+    "hasGlow": true,
+    "repairItems": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onEntityHitWith": {
+      "name": "SwordofEndlessRestlessLivingEntityIsHitWithTool"
+    }
+  }
+}

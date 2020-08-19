@@ -1,12 +1,12 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "cascade_sorcery:blocks/allblock",
-    "up": "cascade_sorcery:blocks/allblock",
-    "north": "cascade_sorcery:blocks/allblock",
-    "east": "cascade_sorcery:blocks/allblock",
-    "south": "cascade_sorcery:blocks/allblock",
-    "west": "cascade_sorcery:blocks/allblock",
-    "particle": "cascade_sorcery:blocks/allblock"
+    "down": "cascade_sorcery:blocks/bm",
+    "up": "cascade_sorcery:blocks/top_m",
+    "north": "cascade_sorcery:blocks/sm",
+    "east": "cascade_sorcery:blocks/sm",
+    "south": "cascade_sorcery:blocks/sm",
+    "west": "cascade_sorcery:blocks/sm",
+    "particle": "cascade_sorcery:blocks/bm"
   }
 }

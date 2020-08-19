@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "cascade_sorcery:items/sword_of_endless_rest"
+  }
+}

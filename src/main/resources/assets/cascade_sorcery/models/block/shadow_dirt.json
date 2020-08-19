@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "cascade_sorcery:blocks/redone-image",
+    "up": "cascade_sorcery:blocks/redone-image",
+    "north": "cascade_sorcery:blocks/redone-image",
+    "east": "cascade_sorcery:blocks/redone-image",
+    "south": "cascade_sorcery:blocks/redone-image",
+    "west": "cascade_sorcery:blocks/redone-image",
+    "particle": "cascade_sorcery:blocks/redone-image"
+  }
+}

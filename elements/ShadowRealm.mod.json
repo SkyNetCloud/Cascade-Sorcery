@@ -19,6 +19,9 @@
     "texture": "ligther",
     "portalTexture": "top",
     "enablePortal": true,
+    "portalMakeCondition": {
+      "name": "ShadowRealmProcedure"
+    },
     "portalUseCondition": {
       "name": "ShadowRealmCanTravelThroughPortal"
     },

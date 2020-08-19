@@ -1,1 +1,20 @@
-{}
+{
+  "shadow_block_sound": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "cascade_sorcery:shadow_block_sound",
+        "stream": false
+      }
+    ]
+  },
+  "shadow": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "cascade_sorcery:shadow_block_sound",
+        "stream": false
+      }
+    ]
+  }
+}

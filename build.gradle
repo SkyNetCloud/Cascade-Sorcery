@@ -8,12 +8,18 @@ buildscript {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
     }
 }
+
+
+plugins {
+    id "com.matthewprenger.cursegradle" version "1.4.0"
+}
+
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 
-version = '1.0'
-group = 'com.yourname.modid'
-archivesBaseName = 'modid'
+version = '0.1'
+group = 'ca.skynetcloud.cascadesorcery'
+archivesBaseName = 'cascadesorcery'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 
@@ -28,7 +34,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                examplemod {
+                cascadesorcery {
                     source sourceSets.main
                 }
             }
@@ -41,7 +47,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                examplemod {
+                cascadesorcery {
                     source sourceSets.main
                 }
             }
@@ -54,4 +60,21 @@ dependencies {
 }
 
 apply from: 'mcreator.gradle'
+
+curseforge {
+    if (project.hasProperty('curseApiKey')) {
+        apiKey = project.getProperty('curseApiKey')
+        project {
+            id = "${packid}"
+            
+            changelog = file("Cascade-Sorcery-${version}-changelog.txt")
+            
+            releaseType = 'beta'
+
+            mainArtifact(jar) {
+                displayName = "Cascade-Sorcery ${version}"
+            }
+        }
+    }
+}
 

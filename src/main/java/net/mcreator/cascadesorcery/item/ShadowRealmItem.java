@@ -12,7 +12,10 @@ import net.minecraft.item.Item;
 import net.minecraft.entity.player.PlayerEntity;
 
 import net.mcreator.cascadesorcery.world.dimension.ShadowRealmDimension;
+import net.mcreator.cascadesorcery.procedures.ShadowRealmProcedureProcedure;
 import net.mcreator.cascadesorcery.itemgroup.CascadeSorceryTabItemGroup;
+
+import com.google.common.collect.ImmutableMap;
 
 public class ShadowRealmItem extends Item {
 	@ObjectHolder("cascade_sorcery:shadow_realm")
@@ -33,7 +36,7 @@ public class ShadowRealmItem extends Item {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			if (world.isAirBlock(pos) && true)
+			if (world.isAirBlock(pos) && ShadowRealmProcedureProcedure.executeProcedure(ImmutableMap.of("entity", entity)))
 				ShadowRealmDimension.portal.portalSpawn(world, pos);
 			itemstack.damageItem(1, entity, c -> c.sendBreakAnimation(context.getHand()));
 			return ActionResultType.SUCCESS;

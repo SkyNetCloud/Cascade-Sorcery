@@ -10,14 +10,17 @@
     "textureLeggings": "shadow_armor_leggings",
     "enableBoots": true,
     "textureBoots": "shadow_armor_boots",
+    "onHelmetTick": {
+      "name": "ShadowarmorArmorHelmetTickEvent"
+    },
     "creativeTab": {
       "value": "CUSTOM:CascadeSorceryTab"
     },
     "armorTextureFile": "shadow_armor",
-    "helmetName": "Shadow_armor Helmet",
-    "bodyName": "Shadow_armor Chestplate",
-    "leggingsName": "Shadow_armor Leggings",
-    "bootsName": "Shadow_armor Boots",
+    "helmetName": "Shadow Armor Helmet",
+    "bodyName": "Shadow Armor Chestplate",
+    "leggingsName": "Shadow Armor Leggings",
+    "bootsName": "Shadow Armor Boots",
     "helmetSpecialInfo": [],
     "bodySpecialInfo": [],
     "leggingsSpecialInfo": [],

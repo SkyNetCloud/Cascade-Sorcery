@@ -542,6 +542,23 @@
       "locked_code": true,
       "ids": {},
       "registry_name": "give_money"
+    },
+    {
+      "name": "ShadowarmorArmorHelmetTickEvent",
+      "type": "procedure",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "shadowarmor_armor_helmet_tick_event",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -610,14 +627,14 @@
     },
     "en_us": {
       "item.cascade_sorcery.shadow_realm": "Shadow Realm Portal Igniter",
-      "item.cascade_sorcery.shadow_armor_armor_chestplate": "Shadow_armor Chestplate",
+      "item.cascade_sorcery.shadow_armor_armor_chestplate": "Shadow Armor Chestplate",
       "entity.cascade_sorcery.shadow_villager": "Shadow Villager",
       "itemGroup.tabcascade_sorcery_tab": "Cascade Sorcery Tab",
       "block.cascade_sorcery.death_ingot_ore_block": "Block of DeathIngot",
-      "item.cascade_sorcery.shadow_armor_armor_leggings": "Shadow_armor Leggings",
+      "item.cascade_sorcery.shadow_armor_armor_leggings": "Shadow Armor Leggings",
       "block.cascade_sorcery.death_ingot_ore": "DeathIngot Ore",
       "block.cascade_sorcery.dead_grass_block": "Dead Grass Block",
-      "item.cascade_sorcery.shadow_armor_armor_boots": "Shadow_armor Boots",
+      "item.cascade_sorcery.shadow_armor_armor_boots": "Shadow Armor Boots",
       "block.cascade_sorcery.shadow_ingot_ore_block": "Block of Shadow_Ingot",
       "item.cascade_sorcery.shadow_ingot_ingot": "Shadow_Ingot",
       "block.cascade_sorcery.merger_table_block": "Merger Table Block",
@@ -626,7 +643,7 @@
       "block.cascade_sorcery.shadow_ingot_ore": "Shadow_Ingot Ore",
       "block.cascade_sorcery.shadow_dirt": "Shadow Dirt",
       "item.cascade_sorcery.death_armor_armor_leggings": "DeathArmor Leggings",
-      "item.cascade_sorcery.shadow_armor_armor_helmet": "Shadow_armor Helmet",
+      "item.cascade_sorcery.shadow_armor_armor_helmet": "Shadow Armor Helmet",
       "item.cascade_sorcery.death_ingot_ingot": "DeathIngot",
       "item.cascade_sorcery.death_armor_armor_boots": "DeathArmor Boots",
       "item.cascade_sorcery.swordof_endless_restless": "Swordof Endless Rest",
@@ -639,15 +656,17 @@
     "modName": "Cascade Sorcery",
     "version": "1.0.0",
     "author": "SkyNetCloud",
+    "websiteURL": "http://skynetcloud.xyz",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
-    "modPicture": "cs",
+    "modPicture": "cs1",
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.15.2",
-    "modElementsPackage": "net.mcreator.cascadesorcery",
+    "credits": "Thank you to everyone who help with art and stuff for this mod",
+    "modElementsPackage": "ca.skynetcloud.cascadesorcery",
     "lockBaseModFiles": false
   },
   "mcreatorVersion": 202000432115

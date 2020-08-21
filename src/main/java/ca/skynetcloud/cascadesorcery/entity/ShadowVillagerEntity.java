@@ -21,23 +21,33 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.network.IPacket;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.item.Item;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.merchant.villager.VillagerEntity;
 import net.minecraft.entity.ai.goal.SwimGoal;
+import net.minecraft.entity.ai.goal.RestrictSunGoal;
 import net.minecraft.entity.ai.goal.RandomWalkingGoal;
-import net.minecraft.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.entity.ai.goal.PanicGoal;
+import net.minecraft.entity.ai.goal.OpenDoorGoal;
+import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
+import net.minecraft.entity.ai.goal.MoveTowardsVillageGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
-import net.minecraft.entity.ai.goal.HurtByTargetGoal;
+import net.minecraft.entity.ai.goal.LookAtGoal;
+import net.minecraft.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.CreatureAttribute;
-import net.minecraft.client.renderer.entity.model.BipedModel;
-import net.minecraft.client.renderer.entity.layers.BipedArmorLayer;
-import net.minecraft.client.renderer.entity.BipedRenderer;
+import net.minecraft.client.renderer.entity.model.VillagerModel;
+import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.block.material.Material;
 
+import com.google.common.collect.ImmutableMap;
+
+import ca.skynetcloud.cascadesorcery.procedures.PlayerHasHitEntityProcedure;
 import ca.skynetcloud.cascadesorcery.itemgroup.CascadeSorceryTabItemGroup;
 import ca.skynetcloud.cascadesorcery.CascadeSorceryModElements;
 
@@ -52,7 +62,7 @@ public class ShadowVillagerEntity extends CascadeSorceryModElements.ModElement {
 	@Override
 	public void initElements() {
 		entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.CREATURE).setShouldReceiveVelocityUpdates(true)
-				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).size(0.6f, 1.8f)).build("shadow_villager")
+				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).size(0.6f, 1.95f)).build("shadow_villager")
 						.setRegistryName("shadow_villager");
 		elements.entities.add(() -> entity);
 		elements.items.add(() -> new SpawnEggItem(entity, -6710887, -13421773, new Item.Properties().group(CascadeSorceryTabItemGroup.tab))
@@ -77,15 +87,11 @@ public class ShadowVillagerEntity extends CascadeSorceryModElements.ModElement {
 	@SubscribeEvent
 	@OnlyIn(Dist.CLIENT)
 	public void registerModels(ModelRegistryEvent event) {
-		RenderingRegistry.registerEntityRenderingHandler(entity, renderManager -> {
-			BipedRenderer customRender = new BipedRenderer(renderManager, new BipedModel(0), 0.5f) {
-				@Override
-				public ResourceLocation getEntityTexture(Entity entity) {
-					return new ResourceLocation("cascade_sorcery:textures/shadow_villager.png");
-				}
-			};
-			customRender.addLayer(new BipedArmorLayer(customRender, new BipedModel(0.5f), new BipedModel(1)));
-			return customRender;
+		RenderingRegistry.registerEntityRenderingHandler(entity, renderManager -> new MobRenderer(renderManager, new VillagerModel(0), 0.5f) {
+			@Override
+			public ResourceLocation getEntityTexture(Entity entity1) {
+				return new ResourceLocation("cascade_sorcery:textures/shadow_villager.png");
+			}
 		});
 	}
 	public static class CustomEntity extends VillagerEntity {
@@ -109,11 +115,39 @@ public class ShadowVillagerEntity extends CascadeSorceryModElements.ModElement {
 		@Override
 		protected void registerGoals() {
 			super.registerGoals();
-			this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.2, false));
-			this.goalSelector.addGoal(2, new RandomWalkingGoal(this, 1));
-			this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
-			this.goalSelector.addGoal(4, new LookRandomlyGoal(this));
-			this.goalSelector.addGoal(5, new SwimGoal(this));
+			this.goalSelector.addGoal(1, new PanicGoal(this, 1));
+			this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, PlayerEntity.class, false, false) {
+				@Override
+				public boolean shouldExecute() {
+					double x = CustomEntity.this.getPosX();
+					double y = CustomEntity.this.getPosY();
+					double z = CustomEntity.this.getPosZ();
+					Entity entity = CustomEntity.this;
+					return super.shouldExecute() && PlayerHasHitEntityProcedure
+							.executeProcedure(ImmutableMap.of("entity", entity, "x", x, "y", y, "z", z, "world", world));
+				}
+			});
+			this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, ServerPlayerEntity.class, false, false) {
+				@Override
+				public boolean shouldExecute() {
+					double x = CustomEntity.this.getPosX();
+					double y = CustomEntity.this.getPosY();
+					double z = CustomEntity.this.getPosZ();
+					Entity entity = CustomEntity.this;
+					return super.shouldExecute() && PlayerHasHitEntityProcedure
+							.executeProcedure(ImmutableMap.of("entity", entity, "x", x, "y", y, "z", z, "world", world));
+				}
+			});
+			this.goalSelector.addGoal(4, new RestrictSunGoal(this));
+			this.goalSelector.addGoal(5, new RandomWalkingGoal(this, 0.6));
+			this.goalSelector.addGoal(6, new MoveTowardsVillageGoal(this, 0.5));
+			this.goalSelector.addGoal(7, new OpenDoorGoal(this, true));
+			this.goalSelector.addGoal(8, new OpenDoorGoal(this, false));
+			this.goalSelector.addGoal(9, new LookRandomlyGoal(this));
+			this.goalSelector.addGoal(10, new AvoidEntityGoal(this, MobEntity.class, (float) 6, 1, 1.2));
+			this.goalSelector.addGoal(11, new LookAtGoal(this, PlayerEntity.class, (float) 6));
+			this.goalSelector.addGoal(12, new LookAtGoal(this, ServerPlayerEntity.class, (float) 6));
+			this.goalSelector.addGoal(13, new SwimGoal(this));
 		}
 
 		@Override
@@ -126,13 +160,18 @@ public class ShadowVillagerEntity extends CascadeSorceryModElements.ModElement {
 		}
 
 		@Override
+		public net.minecraft.util.SoundEvent getAmbientSound() {
+			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("cascade_sorcery:mod_sound"));
+		}
+
+		@Override
 		public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
 			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(""));
 		}
 
 		@Override
 		public net.minecraft.util.SoundEvent getDeathSound() {
-			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
+			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("cascade_sorcery:death_sound"));
 		}
 
 		@Override

@@ -16,7 +16,7 @@
  * If you change workspace package, modid or prefix, you will need
  * to manually adapt this file to these changes or remake it.
 */
-package net.mcreator.cascadesorcery;
+package ca.skynetcloud.cascadesorcery;
 
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;

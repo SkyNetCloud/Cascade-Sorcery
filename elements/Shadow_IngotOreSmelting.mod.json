@@ -8,40 +8,8 @@
     "recipeRetstackSize": 1,
     "group": "",
     "recipeShapeless": false,
-    "recipeSlots": [
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      }
-    ],
-    "recipeReturnStack": {
-      "value": ""
-    },
     "smeltingInputStack": {
-      "value": "CUSTOM:Shadow_IngotOre"
+      "value": "CUSTOM:Shadow_DustDust"
     },
     "smeltingReturnStack": {
       "value": "CUSTOM:Shadow_IngotIngot"

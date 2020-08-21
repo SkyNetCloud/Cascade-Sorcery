@@ -18,7 +18,7 @@ import java.util.Map;
 
 import io.netty.buffer.Unpooled;
 
-import ca.skynetcloud.cascadesorcery.gui.MergerGUIGui;
+import ca.skynetcloud.cascadesorcery.gui.MergerGui;
 import ca.skynetcloud.cascadesorcery.CascadeSorceryModElements;
 
 @CascadeSorceryModElements.ModElement.Tag
@@ -60,12 +60,12 @@ public class OpenMergerTableUIProcedure extends CascadeSorceryModElements.ModEle
 				NetworkHooks.openGui((ServerPlayerEntity) _ent, new INamedContainerProvider() {
 					@Override
 					public ITextComponent getDisplayName() {
-						return new StringTextComponent("MergerGUI");
+						return new StringTextComponent("Merger");
 					}
 
 					@Override
 					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-						return new MergerGUIGui.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer()).writeBlockPos(_bpos));
+						return new MergerGui.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer()).writeBlockPos(_bpos));
 					}
 				}, _bpos);
 			}

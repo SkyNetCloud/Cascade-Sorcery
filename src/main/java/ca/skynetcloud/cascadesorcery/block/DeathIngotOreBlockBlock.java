@@ -1,5 +1,5 @@
 
-package net.mcreator.cascadesorcery.block;
+package ca.skynetcloud.cascadesorcery.block;
 
 import net.minecraftforge.registries.ObjectHolder;
 import net.minecraftforge.common.ToolType;
@@ -13,8 +13,8 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
-import net.mcreator.cascadesorcery.itemgroup.CascadeSorceryTabItemGroup;
-import net.mcreator.cascadesorcery.CascadeSorceryModElements;
+import ca.skynetcloud.cascadesorcery.itemgroup.CascadeSorceryTabItemGroup;
+import ca.skynetcloud.cascadesorcery.CascadeSorceryModElements;
 
 import java.util.List;
 import java.util.Collections;

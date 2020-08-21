@@ -43,7 +43,7 @@
     "material": {
       "value": "IRON"
     },
-    "tickRate": 1,
+    "tickRate": 10,
     "tickRandomly": false,
     "isReplaceable": false,
     "colorOnMap": "DEFAULT",
@@ -72,9 +72,9 @@
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
     "hasInventory": true,
-    "guiBoundTo": "MergerGUI",
+    "guiBoundTo": "Merger",
     "openGUIOnRightClick": true,
-    "inventorySize": 3,
+    "inventorySize": 8,
     "inventoryStackSize": 64,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,
@@ -90,9 +90,6 @@
     "fluidRestrictions": [],
     "onRightClicked": {
       "name": "OpenMergerTableUI"
-    },
-    "onTickUpdate": {
-      "name": "PowerGen"
     },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],

@@ -30,7 +30,7 @@
         "value": "CUSTOM:ShadowBiome"
       }
     ],
-    "worldGenType": "Normal world gen",
+    "worldGenType": "End like gen",
     "mainFillerBlock": {
       "value": "Blocks.STONE#0"
     },

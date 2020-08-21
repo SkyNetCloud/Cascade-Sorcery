@@ -1,19 +1,15 @@
 package ca.skynetcloud.cascadesorcery.procedures;
 
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.entity.monster.PillagerEntity;
-import net.minecraft.entity.SpawnReason;
-import net.minecraft.entity.MobEntity;
+import net.minecraft.potion.Effects;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.item.ItemStack;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.ILivingEntityData;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Entity;
+import net.minecraft.enchantment.Enchantments;
 
 import java.util.Map;
 
+import ca.skynetcloud.cascadesorcery.item.SwordofEndlessRestlessItem;
 import ca.skynetcloud.cascadesorcery.CascadeSorceryModElements;
 
 @CascadeSorceryModElements.ModElement.Tag
@@ -27,36 +23,28 @@ public class SwordofEndlessRestlessLivingEntityIsHitWithToolProcedure extends Ca
 			System.err.println("Failed to load dependency entity for procedure SwordofEndlessRestlessLivingEntityIsHitWithTool!");
 			return;
 		}
-		if (dependencies.get("x") == null) {
-			System.err.println("Failed to load dependency x for procedure SwordofEndlessRestlessLivingEntityIsHitWithTool!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			System.err.println("Failed to load dependency y for procedure SwordofEndlessRestlessLivingEntityIsHitWithTool!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			System.err.println("Failed to load dependency z for procedure SwordofEndlessRestlessLivingEntityIsHitWithTool!");
-			return;
-		}
-		if (dependencies.get("world") == null) {
-			System.err.println("Failed to load dependency world for procedure SwordofEndlessRestlessLivingEntityIsHitWithTool!");
+		if (dependencies.get("itemstack") == null) {
+			System.err.println("Failed to load dependency itemstack for procedure SwordofEndlessRestlessLivingEntityIsHitWithTool!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1) < 15)) {
-			if (world instanceof World && !world.getWorld().isRemote) {
-				Entity entityToSpawn = new PillagerEntity(EntityType.PILLAGER, world.getWorld());
-				entityToSpawn.setLocationAndAngles(x, y, z, (float) 0, (float) 0);
-				if (entityToSpawn instanceof MobEntity)
-					((MobEntity) entityToSpawn).onInitialSpawn(world, world.getDifficultyForLocation(new BlockPos(entityToSpawn)),
-							SpawnReason.MOB_SUMMONED, (ILivingEntityData) null, (CompoundNBT) null);
-				world.addEntity(entityToSpawn);
-			}
+		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
+		if (((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+				.getItem() == new ItemStack(SwordofEndlessRestlessItem.block, (int) (1)).getItem()) == (true))) {
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 60, (int) 1, (false), (false)));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 60, (int) 1, (false), (false)));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.MINING_FATIGUE, (int) 60, (int) 1, (false), (false)));
+			((itemstack)).addEnchantment(Enchantments.SHARPNESS, (int) 1);
+		} else {
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 0, (int) 0, (false), (false)));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.MINING_FATIGUE, (int) 0, (int) 0, (false), (false)));
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 0, (int) 0, (false), (false)));
 		}
 	}
 }

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "cascade_sorcery:blocks/mark1_bottom",
+    "up": "cascade_sorcery:blocks/mark1_top",
+    "north": "cascade_sorcery:blocks/mark1_side",
+    "east": "cascade_sorcery:blocks/mark1_side",
+    "south": "cascade_sorcery:blocks/mark1_side",
+    "west": "cascade_sorcery:blocks/mark1_side",
+    "particle": "cascade_sorcery:blocks/mark1_bottom"
+  }
+}

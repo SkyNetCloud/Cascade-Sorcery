@@ -6,6 +6,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.World;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ItemStack;
@@ -13,8 +15,10 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.IItemTier;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.client.util.ITooltipFlag;
 
 import java.util.Map;
+import java.util.List;
 import java.util.HashMap;
 
 import ca.skynetcloud.cascadesorcery.procedures.SwordofEndlessRestlessLivingEntityIsHitWithToolProcedure;
@@ -56,6 +60,12 @@ public class SwordofEndlessRestlessItem extends CascadeSorceryModElements.ModEle
 			}
 		}, 3, 11f, new Item.Properties().group(ItemGroup.COMBAT)) {
 			@Override
+			public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
+				super.addInformation(itemstack, world, list, flag);
+				list.add(new StringTextComponent("Hmmm"));
+			}
+
+			@Override
 			public boolean hitEntity(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
 				boolean retval = super.hitEntity(itemstack, entity, sourceentity);
 				double x = entity.getPosX();
@@ -65,10 +75,7 @@ public class SwordofEndlessRestlessItem extends CascadeSorceryModElements.ModEle
 				{
 					Map<String, Object> $_dependencies = new HashMap<>();
 					$_dependencies.put("entity", entity);
-					$_dependencies.put("x", x);
-					$_dependencies.put("y", y);
-					$_dependencies.put("z", z);
-					$_dependencies.put("world", world);
+					$_dependencies.put("itemstack", itemstack);
 					SwordofEndlessRestlessLivingEntityIsHitWithToolProcedure.executeProcedure($_dependencies);
 				}
 				return retval;

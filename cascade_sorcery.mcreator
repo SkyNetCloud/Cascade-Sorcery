@@ -35,25 +35,16 @@
       "type": "block",
       "sortid": 2,
       "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "merger_table_block"
-    },
-    {
-      "name": "MergerGUI",
-      "type": "gui",
-      "sortid": 3,
-      "compiles": true,
       "locked_code": true,
       "ids": {},
-      "registry_name": "merger_gui"
+      "registry_name": "merger_table_block"
     },
     {
       "name": "OpenMergerTableUI",
       "type": "procedure",
       "sortid": 4,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "ids": {},
       "registry_name": "open_merger_table_ui",
       "metadata": {
@@ -106,15 +97,6 @@
       "registry_name": "shadow_ingot_ingot"
     },
     {
-      "name": "Shadow_IngotOre",
-      "type": "block",
-      "sortid": 11,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "shadow_ingot_ore"
-    },
-    {
       "name": "Shadow_IngotOreBlock",
       "type": "block",
       "sortid": 12,
@@ -164,7 +146,7 @@
       "type": "block",
       "sortid": 17,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "ids": {},
       "registry_name": "dead_grass_block"
     },
@@ -199,7 +181,7 @@
       "type": "dimension",
       "sortid": 19,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "ids": {},
       "registry_name": "shadow_realm"
     },
@@ -289,15 +271,6 @@
         "eb": true,
         "ec": true
       }
-    },
-    {
-      "name": "MoneyCard",
-      "type": "item",
-      "sortid": 27,
-      "compiles": true,
-      "locked_code": true,
-      "ids": {},
-      "registry_name": "money_card"
     },
     {
       "name": "MoneyCardRightClickedInAir",
@@ -397,7 +370,7 @@
       "type": "procedure",
       "sortid": 32,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "ids": {},
       "registry_name": "dead_grass_block_block_destroyed_by_player",
       "metadata": {
@@ -454,20 +427,8 @@
             "type": "entity"
           },
           {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
+            "name": "itemstack",
+            "type": "itemstack"
           }
         ]
       }
@@ -518,32 +479,6 @@
       "registry_name": "shadow_villager"
     },
     {
-      "name": "GiveMoneyCommandExecuted",
-      "type": "procedure",
-      "sortid": 39,
-      "compiles": true,
-      "locked_code": true,
-      "ids": {},
-      "registry_name": "give_money_command_executed",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "GiveMoney",
-      "type": "command",
-      "sortid": 39,
-      "compiles": true,
-      "locked_code": true,
-      "ids": {},
-      "registry_name": "give_money"
-    },
-    {
       "name": "ShadowarmorArmorHelmetTickEvent",
       "type": "procedure",
       "sortid": 40,
@@ -556,6 +491,180 @@
           {
             "name": "entity",
             "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Shadowtree",
+      "type": "structure",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "shadowtree"
+    },
+    {
+      "name": "Merger",
+      "type": "gui",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "merger"
+    },
+    {
+      "name": "Shadow_DustDust",
+      "type": "item",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "shadow_dust_dust"
+    },
+    {
+      "name": "Shadow_DustOre",
+      "type": "block",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "shadow_dust_ore"
+    },
+    {
+      "name": "MulitFurnaceGui",
+      "type": "gui",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mulit_furnace_gui"
+    },
+    {
+      "name": "BaseMerger",
+      "type": "gui",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "base_merger"
+    },
+    {
+      "name": "Mark1Merger",
+      "type": "block",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "mark_1_merger"
+    },
+    {
+      "name": "Mark1MergerProcedure",
+      "type": "procedure",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mark_1_merger_procedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Jei",
+      "type": "code",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "jei"
+    },
+    {
+      "name": "MergerMark1Recipe",
+      "type": "recipe",
+      "sortid": 51,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "merger_mark_1_recipe"
+    },
+    {
+      "name": "CasingBlock",
+      "type": "block",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "casing_block"
+    },
+    {
+      "name": "MulitBlockProcedure",
+      "type": "procedure",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mulit_block_procedure",
+      "metadata": {
+        "dependencies": []
+      }
+    },
+    {
+      "name": "ShadowGlome",
+      "type": "mob",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "shadow_glome"
+    },
+    {
+      "name": "PlayerHasHitEntity",
+      "type": "procedure",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "player_has_hit_entity",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       }
@@ -597,64 +706,82 @@
       "name": "shadow",
       "file": "shadow_block_sound",
       "category": "master"
+    },
+    {
+      "name": "mod_sound",
+      "file": "mob_voice",
+      "category": "hostile"
+    },
+    {
+      "name": "death_sound",
+      "file": "mod_death_sound",
+      "category": "hostile"
     }
   ],
   "language_map": {
     "fr_ca": {
-      "item.cascade_sorcery.shadow_realm": "Shadow Realm Portal Igniter",
+      "block.cascade_sorcery.shadow_dust_ore": "Shadow_Dust Ore",
       "item.cascade_sorcery.shadow_armor_armor_chestplate": "Shadow_armor Chestplate",
-      "entity.cascade_sorcery.shadow_villager": "Shadow Villager",
-      "itemGroup.tabcascade_sorcery_tab": "Cascade Sorcery Tab",
-      "block.cascade_sorcery.death_ingot_ore_block": "Block of DeathIngot",
+      "block.cascade_sorcery.mark_1_merger": "Mark 1 Merger",
+      "entity.cascade_sorcery.shadow_glome": "Shadow Glome",
       "item.cascade_sorcery.shadow_armor_armor_leggings": "Shadow_armor Leggings",
       "block.cascade_sorcery.death_ingot_ore": "DeathIngot Ore",
-      "block.cascade_sorcery.dead_grass_block": "Dead Grass Block",
       "item.cascade_sorcery.shadow_armor_armor_boots": "Shadow_armor Boots",
-      "block.cascade_sorcery.shadow_ingot_ore_block": "Block of Shadow Ingot",
       "item.cascade_sorcery.shadow_ingot_ingot": "Shadow Ingot",
-      "block.cascade_sorcery.merger_table_block": "Merger Table Block",
-      "item.cascade_sorcery.death_armor_armor_helmet": "DeathArmor Helmet",
       "item.cascade_sorcery.death_armor_armor_chestplate": "DeathArmor Chestplate",
-      "block.cascade_sorcery.shadow_ingot_ore": "Shadow Ingot Ore",
-      "block.cascade_sorcery.shadow_dirt": "Shadow Dirt",
+      "item.cascade_sorcery.shadow_dust_dust": "Shadow_Dust",
       "item.cascade_sorcery.death_armor_armor_leggings": "DeathArmor Leggings",
-      "item.cascade_sorcery.shadow_armor_armor_helmet": "Shadow_armor Helmet",
       "item.cascade_sorcery.death_ingot_ingot": "DeathIngot",
       "item.cascade_sorcery.death_armor_armor_boots": "DeathArmor Boots",
       "item.cascade_sorcery.swordof_endless_restless": "Swordof Endless Rest",
-      "item.cascade_sorcery.money_card": "Money Card",
+      "item.cascade_sorcery.shadow_realm": "Shadow Realm Portal Igniter",
+      "entity.cascade_sorcery.shadow_villager": "Shadow Villager",
+      "itemGroup.tabcascade_sorcery_tab": "Cascade Sorcery Tab",
+      "block.cascade_sorcery.death_ingot_ore_block": "Block of DeathIngot",
+      "block.cascade_sorcery.casing_block": "Casing Block",
+      "block.cascade_sorcery.dead_grass_block": "Dead Grass Block",
+      "block.cascade_sorcery.shadow_ingot_ore_block": "Block of Shadow Ingot",
+      "block.cascade_sorcery.merger_table_block": "Merger Table Block",
+      "item.cascade_sorcery.death_armor_armor_helmet": "DeathArmor Helmet",
+      "item.cascade_sorcery.shadow_glome": "Shadow Glome Spawn Egg",
+      "block.cascade_sorcery.shadow_dirt": "Shadow Dirt",
+      "item.cascade_sorcery.shadow_armor_armor_helmet": "Shadow_armor Helmet",
       "item.cascade_sorcery.shadow_villager": "Shadow Villager Spawn Egg"
     },
     "en_us": {
-      "item.cascade_sorcery.shadow_realm": "Shadow Realm Portal Igniter",
+      "block.cascade_sorcery.shadow_dust_ore": "Shadow_Dust Ore",
       "item.cascade_sorcery.shadow_armor_armor_chestplate": "Shadow Armor Chestplate",
+      "block.cascade_sorcery.mark_1_merger": "Mark 1 Merger",
+      "entity.cascade_sorcery.shadow_glome": "Shadow Glome",
+      "item.cascade_sorcery.shadow_armor_armor_leggings": "Shadow Armor Leggings",
+      "block.cascade_sorcery.death_ingot_ore": "DeathIngot Ore",
+      "item.cascade_sorcery.shadow_armor_armor_boots": "Shadow Armor Boots",
+      "item.cascade_sorcery.shadow_ingot_ingot": "Shadow_Ingot",
+      "item.cascade_sorcery.death_armor_armor_chestplate": "DeathArmor Chestplate",
+      "item.cascade_sorcery.shadow_dust_dust": "Shadow_Dust",
+      "item.cascade_sorcery.death_armor_armor_leggings": "DeathArmor Leggings",
+      "item.cascade_sorcery.swordof_endless_restless": "Sword of Endless Rest",
+      "item.cascade_sorcery.death_armor_armor_boots": "DeathArmor Boots",
+      "item.cascade_sorcery.death_ingot_ingot": "DeathIngot",
+      "item.cascade_sorcery.shadow_realm": "Shadow Realm Portal Igniter",
       "entity.cascade_sorcery.shadow_villager": "Shadow Villager",
       "itemGroup.tabcascade_sorcery_tab": "Cascade Sorcery Tab",
       "block.cascade_sorcery.death_ingot_ore_block": "Block of DeathIngot",
-      "item.cascade_sorcery.shadow_armor_armor_leggings": "Shadow Armor Leggings",
-      "block.cascade_sorcery.death_ingot_ore": "DeathIngot Ore",
+      "block.cascade_sorcery.casing_block": "Casing Block",
       "block.cascade_sorcery.dead_grass_block": "Dead Grass Block",
-      "item.cascade_sorcery.shadow_armor_armor_boots": "Shadow Armor Boots",
       "block.cascade_sorcery.shadow_ingot_ore_block": "Block of Shadow_Ingot",
-      "item.cascade_sorcery.shadow_ingot_ingot": "Shadow_Ingot",
       "block.cascade_sorcery.merger_table_block": "Merger Table Block",
       "item.cascade_sorcery.death_armor_armor_helmet": "DeathArmor Helmet",
-      "item.cascade_sorcery.death_armor_armor_chestplate": "DeathArmor Chestplate",
-      "block.cascade_sorcery.shadow_ingot_ore": "Shadow_Ingot Ore",
+      "item.cascade_sorcery.shadow_glome": "Shadow Glome Spawn Egg",
       "block.cascade_sorcery.shadow_dirt": "Shadow Dirt",
-      "item.cascade_sorcery.death_armor_armor_leggings": "DeathArmor Leggings",
       "item.cascade_sorcery.shadow_armor_armor_helmet": "Shadow Armor Helmet",
-      "item.cascade_sorcery.death_ingot_ingot": "DeathIngot",
-      "item.cascade_sorcery.death_armor_armor_boots": "DeathArmor Boots",
-      "item.cascade_sorcery.swordof_endless_restless": "Swordof Endless Rest",
-      "item.cascade_sorcery.money_card": "Money Card",
       "item.cascade_sorcery.shadow_villager": "Shadow Villager Spawn Egg"
     }
   },
   "workspaceSettings": {
     "modid": "cascade_sorcery",
     "modName": "Cascade Sorcery",
-    "version": "1.0.0",
+    "version": "0.1",
     "author": "SkyNetCloud",
     "websiteURL": "http://skynetcloud.xyz",
     "disableForgeVersionCheck": true,

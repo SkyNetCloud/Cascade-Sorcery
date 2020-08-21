@@ -5,8 +5,10 @@
     "renderType": 0,
     "texture": "sword_of_endless_rest",
     "customModelName": "Normal",
-    "name": "Swordof Endless Rest",
-    "specialInfo": [],
+    "name": "Sword of Endless Rest",
+    "specialInfo": [
+      "Hmmm"
+    ],
     "creativeTab": {
       "value": "COMBAT"
     },

@@ -52,6 +52,10 @@ public class CascadeSorceryModElements {
 				new net.minecraft.util.SoundEvent(new ResourceLocation("cascade_sorcery", "shadow_block_sound")));
 		sounds.put(new ResourceLocation("cascade_sorcery", "shadow"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("cascade_sorcery", "shadow")));
+		sounds.put(new ResourceLocation("cascade_sorcery", "mod_sound"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("cascade_sorcery", "mod_sound")));
+		sounds.put(new ResourceLocation("cascade_sorcery", "death_sound"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("cascade_sorcery", "death_sound")));
 		try {
 			ModFileScanData modFileInfo = ModList.get().getModFileById("cascade_sorcery").getFile().getScanResult();
 			Set<ModFileScanData.AnnotationData> annotations = modFileInfo.getAnnotations();

@@ -16,7 +16,7 @@
  * If you change workspace package, modid or prefix, you will need
  * to manually adapt this file to these changes or remake it.
 */
-package net.mcreator.cascadesorcery;
+package ca.skynetcloud.cascadesorcery;
 
 import java.io.File;
 
@@ -25,13 +25,13 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 import com.electronwill.nightconfig.core.file.CommentedFileConfig;
 import com.electronwill.nightconfig.core.io.WritingMode;
-import net.mcreator.cascadesorcery.CSConfigInit;
+import ca.skynetcloud.cascadesorcery.CSConfigInit;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.loading.FMLPaths;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.ModLoadingContext;
 
-import net.mcreator.cascadesorcery.Names;
+import ca.skynetcloud.cascadesorcery.Names;
 
 @CascadeSorceryModElements.ModElement.Tag
 public class ConfigLoader extends CascadeSorceryModElements.ModElement {

@@ -16,5 +16,23 @@
         "stream": false
       }
     ]
+  },
+  "mod_sound": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "cascade_sorcery:mob_voice",
+        "stream": false
+      }
+    ]
+  },
+  "death_sound": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "cascade_sorcery:mod_death_sound",
+        "stream": false
+      }
+    ]
   }
 }

@@ -13,9 +13,7 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.common.capabilities.Capability;
 
 import net.minecraft.world.storage.loot.LootContext;
-import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.World;
-import net.minecraft.world.IWorldReader;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
@@ -58,7 +56,6 @@ import net.minecraft.block.Block;
 import javax.annotation.Nullable;
 
 import java.util.stream.IntStream;
-import java.util.Random;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
@@ -66,10 +63,9 @@ import java.util.Collections;
 
 import io.netty.buffer.Unpooled;
 
-import ca.skynetcloud.cascadesorcery.procedures.PowerGenProcedure;
 import ca.skynetcloud.cascadesorcery.procedures.OpenMergerTableUIProcedure;
 import ca.skynetcloud.cascadesorcery.item.Shadow_IngotIngotItem;
-import ca.skynetcloud.cascadesorcery.gui.MergerGUIGui;
+import ca.skynetcloud.cascadesorcery.gui.MergerGui;
 import ca.skynetcloud.cascadesorcery.CascadeSorceryModElements;
 
 @CascadeSorceryModElements.ModElement.Tag
@@ -103,11 +99,6 @@ public class MergerTableBlockBlock extends CascadeSorceryModElements.ModElement 
 		}
 
 		@Override
-		public int tickRate(IWorldReader world) {
-			return 1;
-		}
-
-		@Override
 		protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
 			builder.add(FACING);
 		}
@@ -134,29 +125,6 @@ public class MergerTableBlockBlock extends CascadeSorceryModElements.ModElement 
 		}
 
 		@Override
-		public void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean moving) {
-			super.onBlockAdded(state, world, pos, oldState, moving);
-			int x = pos.getX();
-			int y = pos.getY();
-			int z = pos.getZ();
-			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, this.tickRate(world));
-		}
-
-		@Override
-		public void tick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-			super.tick(state, world, pos, random);
-			int x = pos.getX();
-			int y = pos.getY();
-			int z = pos.getZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("world", world);
-				PowerGenProcedure.executeProcedure($_dependencies);
-			}
-			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, this.tickRate(world));
-		}
-
-		@Override
 		public ActionResultType onBlockActivated(BlockState state, World world, BlockPos pos, PlayerEntity entity, Hand hand,
 				BlockRayTraceResult hit) {
 			super.onBlockActivated(state, world, pos, entity, hand, hit);
@@ -172,8 +140,7 @@ public class MergerTableBlockBlock extends CascadeSorceryModElements.ModElement 
 
 					@Override
 					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-						return new MergerGUIGui.GuiContainerMod(id, inventory,
-								new PacketBuffer(Unpooled.buffer()).writeBlockPos(new BlockPos(x, y, z)));
+						return new MergerGui.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer()).writeBlockPos(new BlockPos(x, y, z)));
 					}
 				}, new BlockPos(x, y, z));
 			}
@@ -241,7 +208,7 @@ public class MergerTableBlockBlock extends CascadeSorceryModElements.ModElement 
 	}
 
 	public static class CustomTileEntity extends LockableLootTileEntity implements ISidedInventory {
-		private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(3, ItemStack.EMPTY);
+		private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(9, ItemStack.EMPTY);
 		protected CustomTileEntity() {
 			super(tileEntityType);
 		}
@@ -304,12 +271,12 @@ public class MergerTableBlockBlock extends CascadeSorceryModElements.ModElement 
 
 		@Override
 		public Container createMenu(int id, PlayerInventory player) {
-			return new MergerGUIGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
+			return new MergerGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
 		}
 
 		@Override
 		public ITextComponent getDisplayName() {
-			return new StringTextComponent("Merger Table Block");
+			return new StringTextComponent("Merger Table Block Tier 2");
 		}
 
 		@Override

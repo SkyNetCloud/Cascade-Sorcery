@@ -25,16 +25,13 @@ import net.minecraft.world.gen.layer.traits.IC0Transformer;
 import net.minecraft.world.gen.layer.ZoomLayer;
 import net.minecraft.world.gen.layer.Layer;
 import net.minecraft.world.gen.layer.IslandLayer;
-import net.minecraft.world.gen.feature.ProbabilityConfig;
-import net.minecraft.world.gen.carver.CaveWorldCarver;
 import net.minecraft.world.gen.area.LazyArea;
 import net.minecraft.world.gen.area.IAreaFactory;
-import net.minecraft.world.gen.OverworldGenSettings;
-import net.minecraft.world.gen.OverworldChunkGenerator;
 import net.minecraft.world.gen.LazyAreaLayerContext;
 import net.minecraft.world.gen.INoiseRandom;
 import net.minecraft.world.gen.IExtendedNoiseRandom;
-import net.minecraft.world.gen.GenerationStage;
+import net.minecraft.world.gen.EndGenerationSettings;
+import net.minecraft.world.gen.EndChunkGenerator;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.dimension.Dimension;
@@ -144,6 +141,8 @@ public class ShadowRealmDimension extends CascadeSorceryModElements.ModElement {
 					.lightValue(0).noDrops());
 			setRegistryName("shadow_realm_portal");
 		}
+
+
 
 		@Override
 		public void tick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
@@ -695,6 +694,12 @@ public class ShadowRealmDimension extends CascadeSorceryModElements.ModElement {
 			return false;
 		}
 
+		
+       @OnlyIn(Dist.CLIENT)
+       public boolean isSkyColored() {
+        return true;
+       }
+
 		@Override
 		public boolean canRespawnHere() {
 			return false;
@@ -730,16 +735,15 @@ public class ShadowRealmDimension extends CascadeSorceryModElements.ModElement {
 					 * Calculates the angle of sun and moon in the sky relative to a specified time
 					 * (usually worldTime)
 					 */
-		public float calculateCelestialAngle(long worldTime, float partialTicks) {
-			double d0 = MathHelper.frac((double) worldTime / 24000.0D - 0.25D);
-			double d1 = 0.5D - Math.cos(d0 * Math.PI) / 2.0D;
-			return (float) (d0 * 2.0D + d1) / 3.0F;
-		}
+   public float calculateCelestialAngle(long worldTime, float partialTicks) {
+      return 0.0F;
+   }
+   
 	}
 
-	public static class ChunkProviderModded extends OverworldChunkGenerator {
+	public static class ChunkProviderModded extends EndChunkGenerator {
 		public ChunkProviderModded(IWorld world, BiomeProvider provider) {
-			super(world, provider, new OverworldGenSettings() {
+			super(world, provider, new EndGenerationSettings() {
 				public BlockState getDefaultBlock() {
 					return Blocks.STONE.getDefaultState();
 				}
@@ -748,11 +752,7 @@ public class ShadowRealmDimension extends CascadeSorceryModElements.ModElement {
 					return Blocks.LAVA.getDefaultState();
 				}
 			});
-			this.randomSeed.skip(5349);
-		}
-
-		@Override
-		public void spawnMobs(ServerWorld worldIn, boolean spawnHostileMobs, boolean spawnPeacefulMobs) {
+			this.randomSeed.skip(3946);
 		}
 	}
 
@@ -765,22 +765,9 @@ public class ShadowRealmDimension extends CascadeSorceryModElements.ModElement {
 
 	public static class BiomeProviderCustom extends BiomeProvider {
 		private Layer genBiomes;
-		private static boolean biomesPatched = false;
 		public BiomeProviderCustom(World world) {
 			super(new HashSet<Biome>(Arrays.asList(dimensionBiomes)));
 			this.genBiomes = getBiomeLayer(world.getSeed());
-			if (!biomesPatched) {
-				for (Biome biome : this.biomes) {
-					biome.addCarver(GenerationStage.Carving.AIR, Biome.createCarver(new CaveWorldCarver(ProbabilityConfig::deserialize, 256) {
-						{
-							carvableBlocks = ImmutableSet.of(Blocks.STONE.getDefaultState().getBlock(),
-									biome.getSurfaceBuilder().getConfig().getTop().getBlock(),
-									biome.getSurfaceBuilder().getConfig().getUnder().getBlock());
-						}
-					}, new ProbabilityConfig(0.14285715f)));
-				}
-				biomesPatched = true;
-			}
 		}
 
 		public Biome getNoiseBiome(int x, int y, int z) {

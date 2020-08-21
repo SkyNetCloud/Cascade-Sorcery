@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "cascade_sorcery:blocks/sm",
+    "up": "cascade_sorcery:blocks/sm",
+    "north": "cascade_sorcery:blocks/sm",
+    "east": "cascade_sorcery:blocks/sm",
+    "south": "cascade_sorcery:blocks/sm",
+    "west": "cascade_sorcery:blocks/sm",
+    "particle": "cascade_sorcery:blocks/sm"
+  }
+}
